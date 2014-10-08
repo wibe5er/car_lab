@@ -17,7 +17,7 @@ Our car should have the following:
 
 As a default a `new Car` should have the following values:
 * previous_owners should be an empty array, `[]`.
-* current_owner: should be the manufacturer (ford,honda,toyota).
+* current_owner: should be the "manufacturer".
 * `state` should be `off`.
 
 We should also be able to do the following with our car.
