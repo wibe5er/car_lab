@@ -10,7 +10,7 @@ Our car should have the following:
 * make
 * model
 * year
-* state
+* state (this will be "on" or "off" - this does not mean a state like California or New Jersey)
 * color
 * previous_owners
 * current_owner
