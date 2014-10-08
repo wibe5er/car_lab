@@ -17,12 +17,12 @@ Our car should have the following:
 
 As a default a `new Car` should have the following values:
 * previous_owners should be an empty array, `[]`.
-* current_owner: should be `manufacturer`.
+* current_owner: should be the manufacturer (ford,honda,toyota).
 * `state` should be `off`.
 
 We should also be able to do the following with our car.
 
-*  `Car#sale`, we should be able to sale a car to someone, which should update the `current_owner` and `previous_owners` array.
+*  `Car#sale`, we should be able to sell a car to someone, which should update the `current_owner` and `previous_owners` array.
 
 * `Car#paint`, which should take a new color and update the color of the car to be new color.
 
