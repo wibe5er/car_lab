@@ -1,13 +1,13 @@
 # Prototype Body Shop
 ## Implement the following
 
-The idea of this lab is to get you comfortable with writing and implementing prototypes and constructors. We will also review testing in the lab. As you work through the phases, run `npm-test` to make sure you are implementing everything correctly.
+The idea of this lab is to get you comfortable with writing and implementing prototypes and constructors. We will also review testing in the lab. As you work through the phases, run `npm test` to make sure you are implementing everything correctly.
 
 ### Phase I
 
 1. Fork the repository
 2. Clone and cd into the car_lab folder
-3. run `npm-install`
+3. run `npm install`
 
 Once you have completed these steps, we can start thinking about our Car class. It should have the following:
 
