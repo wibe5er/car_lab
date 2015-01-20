@@ -8,14 +8,13 @@ describe('Car', function(){
 
   beforeEach(function(){
     // create a new myCar object each time
-    myCar = new Car("Subaru","Outback","Black");
+    myCar= new Car("Dodge","Charger", 2014, "Red");
   });
 
   describe('#year', function(){
     //think about using the new Date() and getFullYear functions
-    var year = new Date().getFullYear();
     it('should be the current year', function(){
-      expect(myCar.year).to.equal(year);
+      expect(myCar.year).to.equal(2014);
     });
   });
 
@@ -27,31 +26,31 @@ describe('Car', function(){
 
   describe('#previousOwners', function(){
     it('should initially be empty', function(){
-      expect(myCar.previousOwners).to.include.members([]);
+      expect(myCar.previousOwners).to.be.empty;
     });
   });
 
-  describe('#curretOwner', function(){
+  describe('#currentOwner', function(){
     it('should initially be manufacturer', function(){
-      expect(myCar.currentOwner).to.equal("manufacturer");
+      expect(myCar.current_owner).to.equal("Manufacturer");
     });
   });
 
   describe('#passengers', function(){
     it('should initially be empty', function(){
-      expect(myCar.passengers).to.include.members([]);
+      expect(myCar.passengers).to.be.empty;
     });
   });
 
   describe('#sale', function(){
     it('should move currentOwner to previousOwners array', function(){
-      myCar.sale("Frank");
-      expect(myCar.previousOwners).to.include.members(["manufacturer"]);
+      myCar.sale("Charlie");
+      expect(myCar.previous_owners[0]).to.equal("Manufacturer");
     });
 
     it('should update currentOwner with the new owner', function(){
-      myCar.sale("Frank");
-      expect(myCar.currentOwner).to.equal("Frank");
+      myCar.sale("Charlie");
+      expect(myCar.current_owner).to.equal("Charlie");
     });
   });
 
@@ -76,28 +75,10 @@ describe('Car', function(){
     });
   });
 
-  describe("#driveTo", function(){
-    it("should not return any value if car is off",function(){
-      var x = myCar.driveTo("St. Helena");
-      expect(x).to.equal(undefined);
-    });
-    it("should return Driving to St. Helena",function(){
-      myCar.start();
-      var x = myCar.driveTo("St. Helena");
-      expect(x).to.equal("Driving to St. Helena");
-    });
-  });
-
   describe('#park', function(){
     it('should make sure to only work when the car is off', function(){
-      var x = myCar.park();
-      expect(x).to.equal("Parked!!!");
-    });
-
-    it('should make sure to only work when the car is off', function(){
-      myCar.start();
-      var x = myCar.park();
-      expect(x).to.equal(undefined);
+      myCar.park();
+      expect(myCar.status).to.equal("parked");
     });
 
   });
@@ -105,33 +86,31 @@ describe('Car', function(){
   describe('#pickUp', function(){
     it('should add the passenger to the passengers array if car is on', function(){
       myCar.start();
-      myCar.pickUp("Laura");
-      expect(myCar.passengers).to.include.members(["Laura"]);
+      myCar.pick_up("john");
+      expect(myCar.passengers[0]).to.equal("john");
     });
 
     it('should not modify the passengers array if car is off', function(){
-      myCar.pickUp("Laura");
-      expect(myCar.passengers).to.include.members([]);
+      myCar.pick_up("john");
+      expect(myCar.passengers[0]).to.be.empty;
     });
   });
 
   describe('#dropOff', function(){
     it('should remove passenger from the passengers array if car is on', function(){
       myCar.start();
-      myCar.pickUp("Laura");
-      myCar.dropOff("Laura");
-      expect(myCar.passengers).to.include.members([]);
+      myCar.pick_up("john");
+      myCar.dropOff("john");
+      expect(myCar.passengers).to.be.empty;
     });
 
     it('should leave passenger in the passengers array if car is off', function(){
       myCar.start();
-      myCar.pickUp("Laura");
+      myCar.pick_up("john");
       myCar.off();
-      myCar.dropOff("Laura");
-      expect(myCar.passengers).to.include.members(["Laura"]);
+      myCar.dropOff("john");
+      expect(myCar.passengers[0]).to.equal("john");
     });
   });
 
 });
-
-
