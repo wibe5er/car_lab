@@ -51,7 +51,7 @@ it should default to an empty array.
 
 Implement the following methods:
 
-* `Car#pick_up` should take a `name` and `console.log` that you are `"driving to 'pick up <friend>'"`, but only if the `car` is `on`. It should also update the `passangers` array to include the new passanger.
+* `Car#pickUp` should take a `name` and `console.log` that you are `"driving to 'pick up <friend>'"`, but only if the `car` is `on`. It should also update the `passangers` array to include the new passanger.
 * `Car#dropOff` it should take a `name` and remove them from the `passengers` array, but only if they are in the array. It should also only drop them off if the car is `on`.
 
 
