@@ -21,7 +21,7 @@ Once you have completed these steps, we can start thinking about our Car class. 
 
 As a default a `new Car` should have the following values:
 * previous_owners should be an empty array, `[]`.
-* current_owner: should be a string called "manufacturer".
+* current_owner: should be a string called "Manufacturer".
 * `state` should be `off`.
 
 We should also be able to do the following with our car.
@@ -51,7 +51,7 @@ it should default to an empty array.
 
 Implement the following methods:
 
-* `Car#pickUp` should take a `name` and `console.log` that you are `"driving to 'pick up <friend>'"`, but only if the `car` is `on`. It should also update the `passangers` array to include the new passanger.
+* `Car#pick_up` should take a `name` and `console.log` that you are `"driving to 'pick up <friend>'"`, but only if the `car` is `on`. It should also update the `passangers` array to include the new passanger.
 * `Car#dropOff` it should take a `name` and remove them from the `passengers` array, but only if they are in the array. It should also only drop them off if the car is `on`.
 
 
