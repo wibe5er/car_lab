@@ -12,7 +12,6 @@ describe('Car', function(){
   });
 
   describe('#year', function(){
-    //think about using the new Date() and getFullYear functions
     it('should be the current year', function(){
       expect(myCar.year).to.equal(2014);
     });
