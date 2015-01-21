@@ -75,14 +75,6 @@ describe('Car', function(){
     });
   });
 
-  describe('#park', function(){
-    it('should make sure to only work when the car is off', function(){
-      myCar.park();
-      expect(myCar.status).to.equal("parked");
-    });
-
-  });
-
   describe('#pickUp', function(){
     it('should add the passenger to the passengers array if car is on', function(){
       myCar.start();
